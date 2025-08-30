@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "엔트리-TurboModus",
+  "version": "1.0",
+  "description": "엔트리에서 터보 모드를 활성화 할 수 있게 해줍니다.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["https://playentry.org/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://playentry.org/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
